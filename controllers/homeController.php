@@ -1,17 +1,17 @@
 <?php
 
 class homeController extends controller{
+    public function __construct(){
+         parent::__construct();
+    }
     //deve-se ter sempre uma função index
+   
 	public function index(){
-		$usuario = new usuario();
-		$usuario->setName("Paulo Luis");
-		$usuario->setIdade(121);
-
-
- $dados = array(
- 	'name' => $usuario->getName(),
- 'age' => $usuario->getIdade());
-		$this->loadview('home',$dados);
+         $dados = array();
+ 
+ 
+ 
+	$this->loadview('home',$dados);
 	}
 
 }

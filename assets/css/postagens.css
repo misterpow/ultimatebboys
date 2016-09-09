@@ -1,0 +1,54 @@
+.dbPostagens{
+	background-color: rgba(100,20,60,0.1);
+	width:100%;
+	position: relative;
+	display: inline-block;
+	padding-top: 25px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+}
+
+.post-title {
+	font-family: Arial, Sans-serif;
+	font-size: 20pt;
+	padding-left:10px;
+	padding-bottom: 10px;
+	margin-bottom: 5px;
+	color:#0000CD;
+	text-transform: uppercase;
+}
+
+.post-title a{
+text-decoration: none;
+}
+
+.post-body {
+	font-family: Arial Sans-serif;
+	font-size: 14pt;
+	padding-left:10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+
+}
+
+p.post-data{
+	margin-left: 20px;
+	text-align: right;
+	margin-right: 30px;
+	margin-bottom: 5px;
+}
+
+.dbPostagens img{
+
+width:320px;
+height: 200px;
+float: right;
+padding:5px 15px 5px 10px;
+}
+
+
+.post-complete{
+	color:red;
+
+}

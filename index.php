@@ -1,5 +1,6 @@
 <?php
 //CRIAÇÃO MVC DO ZERO
+require 'config.php';
 
 spl_autoload_register(function($class){
 /*Cria um autoload para carregar diretorios diferentes*/
@@ -11,10 +12,11 @@ spl_autoload_register(function($class){
 		}
 	}else if (file_exists('models/'.$class.'.php')) {
 		require_once 'models/'.$class.'.php';
-	}else{
+	}elseif(file_exists('core/'.$class.'.php')){
 		require_once 'core/'.$class.'.php';
 	}
 });
 //Termina carregamento de classes
 $core = new Core();
 $core->run();
+?>

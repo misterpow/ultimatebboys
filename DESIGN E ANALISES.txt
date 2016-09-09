@@ -1,0 +1,48 @@
+CRIAR CADASTRO.PHP
+CRIAR FORUM
+CRIAR MENU DE FORUM
+PAGINA DE PATROCINADORES
+AREA PARA O BBOY(usuario)
+CRIAR EM FORUM REGRAS DE POSTAGENS
+
+
+BANCO DE DADOS-esbboys [
+***Tabelas****
+1-usuarios
+
+2-paginaPostagens
+	*dados serão jogados na pagina inicial com CSS
+	COLUNAS{
+		titulo
+		corpo postagem
+		data postagem
+	
+	
+	
+	}
+
+3-forumPostagens
+	*dados serão jogados em table no html
+	COLUNAS{
+		postador,
+			-nome,
+		assunto,
+		postagem
+			-textos,imagens,
+		data do post, 
+		respostas
+			-perfil,corpo da resposta, posibilidade de (likes...botao curtir),DATA/HORA da resposta, Nº de posts
+		visualizações
+			qtde de visualizações
+		
+	}
+
+
+
+]
+
+FORUM{
+*postagem de hoje
+*aniversarios
+
+}

@@ -5,19 +5,31 @@ class Core {
 	//private $currentAction;
 
 	public function run(){
-		$url = substr($_SERVER['PHP_SELF'],10);
-//echo $url;
-		if (!empty($url)) {
-			$url = explode('/',$url);
+//****METODO BASICO
+		$url = explode('index.php',$_SERVER['PHP_SELF']);
+		$url = end($url);
+//****METODO AVANÇADO
+		//$url = $_SERVER['REQUEST_URI'];
+
+		$params = array();
+
+		if (!empty($url) && $url != '/') {
+			$url = explode('/', $url);
 			array_shift($url); //array_shift($r) Remove a primeira chave do array
 
+
 			$currentController = $url[0].'Controller';
-			if (isset($url[1])) {
-				$currentAction = $url[1];
+			array_shift($url);
+
+			if (isset($url[0])) {
+				$currentAction = $url[0];
+				array_shift($url);
 			}else{
 				$currentAction = 'index';
 			}
-
+if (count($url)> 0) {
+	$params = $url;
+}
 
 		}else{
 			$currentController = 'homeController';
@@ -25,10 +37,9 @@ class Core {
 		}
 		//echo "CONTROLLER :".$this->currentController;
 		//echo "<br><br>ACTION: ".$this->currentAction;
-		require_once 'core/controller.php';
+		//require_once 'core/controller.php';
 		$c = new $currentController();
-		$c->$currentAction();
-
+		call_user_func_array(array($c,$currentAction),$params);
 
 	}
 
